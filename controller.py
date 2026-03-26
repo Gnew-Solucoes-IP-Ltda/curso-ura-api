@@ -34,11 +34,12 @@ class Controller:
                 titulo = self._provider.obter_titulo(cliente)
                 self.agi.reproduzir_mensagem_boleto(titulo.codigo_barras)
                 self.agi.desligar()
+            
+            else:
+                self.agi.direcionar_para_atendimento()
         
-        except:
-            ...
-        
-        self.agi.direcionar_para_atendimento()
+        except:        
+            self.agi.direcionar_para_atendimento()
         
     def obter_cliente(self) -> Cliente:
         numero_maximo_tentativas = 3
