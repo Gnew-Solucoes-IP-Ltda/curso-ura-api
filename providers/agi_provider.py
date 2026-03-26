@@ -85,4 +85,4 @@ class Agi(AgiAbstract):
         self._agi.stream_file(f'{self._caminho_arquivos_audios}{audio}')
     
     def _goto(self, destino: str) -> None:
-        self._agi.app_exec('GoTo', destino)
+        self._agi.appexec('GoTo', destino)
