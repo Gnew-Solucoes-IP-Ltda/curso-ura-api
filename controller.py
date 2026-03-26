@@ -39,7 +39,7 @@ class Controller:
                 self.agi.direcionar_para_atendimento()
         
         except:        
-            self.agi.direcionar_para_atendimento()
+            ...
         
     def obter_cliente(self) -> Cliente:
         numero_maximo_tentativas = 3
