@@ -1,3 +1,4 @@
+import sys
 from abc import ABC, abstractmethod
 from asterisk.agi import AGI
 
@@ -62,14 +63,17 @@ class Agi(AgiAbstract):
         audio = 'nao_localizamos_cadastro'
         self._reproduzir_mensagem(audio)
         self._goto('from-internal,atendimento,1')
+        sys.exit(0)
 
     def direcionar_para_suporte(self) -> None:
         audio = 'mensagem_transferencia'
         self._reproduzir_mensagem(audio)
         self._goto('from-internal,suporte,1')
+        sys.exit(0)
 
     def desligar(self) -> None:
         self._agi.hangup()
+        sys.exit(0)
 
     def _executar_prompt(self, audio: str) -> str:
         timeout = 3000
